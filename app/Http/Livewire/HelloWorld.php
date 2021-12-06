@@ -9,9 +9,15 @@ class HelloWorld extends Component
 {
     public $name = 'Soko Sama';
 
-    public function mount(Request $request, $name)
+    public function mount($name)
     {
-        $this->name = $request->name;
+        $this->name = $name;
+    }
+
+    //updated   
+    public function updated($name)
+    {
+        $this->name = strtoupper($name);
     }
 
     public function render()
